@@ -1,0 +1,24 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: sharding-storage-service
+  profiles:
+    active: sharding
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: my_test_tx_group
+  datasource:
+     driverClassName: com.mysql.jdbc.Driver
+     url: jdbc:mysql://localhost:3306/sharding-seata?prepStmtCacheSize=517&cachePrepStmts=true&autoReconnect=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
+     username: root
+     password: abc123
+
+logging:
+  level:
+    root: error
+    io.seata: info
+    #sharding-jdbc的sql显示日志是info级别
+    #ShardingSphere-SQL: info

@@ -61,6 +61,37 @@ CREATE TABLE `t_pay1` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE `t_storage0` (
+  `id` bigint(11) NOT NULL AUTO_INCREMENT,
+  `t_pay_id` bigint(11) NOT NULL,
+  `product_id` bigint(11) DEFAULT NULL ,
+  `total` int(11) DEFAULT NULL ,
+  `price` decimal(10,2) NOT NULL ,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ;
+
+CREATE TABLE `t_storage1` (
+  `id` bigint(11) NOT NULL AUTO_INCREMENT,
+  `t_pay_id` bigint(11) NOT NULL,
+  `product_id` bigint(11) DEFAULT NULL ,
+  `total` int(11) DEFAULT NULL ,
+  `price` decimal(10,2) NOT NULL ,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ;
+
+-- ----------------------------
+-- Table for no sharding
+-- ----------------------------
+
+CREATE TABLE `t_storage` (
+  `id` bigint(11) NOT NULL AUTO_INCREMENT,
+  `t_pay_id` bigint(11) NOT NULL,
+  `product_id` bigint(11) DEFAULT NULL COMMENT '产品id',
+  `total` int(11) DEFAULT NULL COMMENT '库存数量',
+  `price` decimal(10,2) NOT NULL COMMENT '产品单价',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COMMENT='库存表';
+
 -- ----------------------------
 -- Table structure for undo_log
 -- ----------------------------

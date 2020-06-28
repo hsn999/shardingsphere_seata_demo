@@ -7,6 +7,7 @@
   <modules>
   	<module>order_server</module>
   	<module>pay_server</module>
+  	<module>storge_server</module>
   </modules>   
 
     <properties>
